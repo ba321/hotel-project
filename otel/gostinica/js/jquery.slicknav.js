@@ -1,6 +1,6 @@
 ;(function ($, document, window) {
     var
-    // default settings object.
+        // объект настроек по умолчанию.
         defaults = {
             label: 'MENU',
             duplicate: true,
@@ -27,7 +27,6 @@
             afterOpen: function () {},
             afterClose: function () {}
         },
-        mobileMenu = 'slicknav',
         prefix = 'slicknav',
 
         Keyboard = {
@@ -44,13 +43,8 @@
     function Plugin(element, options) {
         this.element = element;
 
-        // jQuery has an extend method which merges the contents of two or
-        // more objects, storing the result in the first object. The first object
-        // is generally empty as we don't want to alter the default options for
-        // future instances of the plugin
         this.settings = $.extend({}, defaults, options);
 
-        // Don't remove IDs by default if duplicate is false
         if (!this.settings.duplicate && !options.hasOwnProperty("removeIds")) {
           this.settings.removeIds = false;
         }
@@ -68,14 +62,14 @@
             iconClass,
             menuBar;
 
-        // clone menu if needed
+        // клонировать меню, если нужно
         if (settings.duplicate) {
             $this.mobileNav = menu.clone();
         } else {
             $this.mobileNav = menu;
         }
 
-        // remove IDs if set
+        // удалить идентификаторы, если они установлены
         if (settings.removeIds) {
           $this.mobileNav.removeAttr('id');
           $this.mobileNav.find('*').each(function (i, e) {
@@ -83,7 +77,7 @@
           });
         }
 
-        // remove classes if set
+        // удалить классы, если они установлены
         if (settings.removeClasses) {
             $this.mobileNav.removeAttr('class');
             $this.mobileNav.find('*').each(function (i, e) {
@@ -91,7 +85,7 @@
             });
         }
 
-        // remove styles if set
+        // удалить стили, если они установлены
         if (settings.removeStyles) {
             $this.mobileNav.removeAttr('style');
             $this.mobileNav.find('*').each(function (i, e) {

@@ -1,18 +1,10 @@
-/*  ---------------------------------------------------
-    Template Name: Sona
-    Description: Sona Hotel Html Template
-    Author: Colorlib
-    Author URI: https://colorlib.com
-    Version: 1.0
-    Created: Colorlib
----------------------------------------------------------  */
 
 'use strict';
 
 (function ($) {
 
     /*------------------
-        Preloader
+        Прелоадер
     --------------------*/
     $(window).on('load', function () {
         $(".loader").fadeOut();
@@ -20,14 +12,14 @@
     });
 
     /*------------------
-        Background Set
+        Фоновый набор
     --------------------*/
     $('.set-bg').each(function () {
         var bg = $(this).data('setbg');
         $(this).css('background-image', 'url(' + bg + ')');
     });
 
-    //Offcanvas Menu
+    //Меню Offcanvas
     $(".canvas-open").on('click', function () {
         $(".offcanvas-menu-wrapper").addClass("show-offcanvas-menu-wrapper");
         $(".offcanvas-menu-overlay").addClass("active");
@@ -38,7 +30,7 @@
         $(".offcanvas-menu-overlay").removeClass("active");
     });
 
-    // Search model
+    // Модель поиска
     $('.search-switch').on('click', function () {
         $('.search-model').fadeIn(400);
     });
@@ -49,16 +41,9 @@
         });
     });
 
-    /*------------------
-		Navigation
-	--------------------*/
-    $(".mobile-menu").slicknav({
-        prependTo: '#mobile-menu-wrap',
-        allowParentLinks: true
-    });
 
     /*------------------
-        Hero Slider
+        Герой слайдер
     --------------------*/
    $(".hero-slider").owlCarousel({
         loop: true,
@@ -74,7 +59,7 @@
     });
 
     /*------------------------
-		Testimonial Slider
+		Слайдер отзывов
     ----------------------- */
     $(".testimonial-slider").owlCarousel({
         items: 1,
@@ -87,14 +72,14 @@
     });
 
     /*------------------
-        Magnific Popup
+        Великолепное всплывающее окно
     --------------------*/
     $('.video-popup').magnificPopup({
         type: 'iframe'
     });
 
     /*------------------
-		Date Picker
+		Выбор даты
 	--------------------*/
     $(".date-input").datepicker({
         minDate: 0,
@@ -102,7 +87,7 @@
     });
 
     /*------------------
-		Nice Select
+		Хороший выбор
 	--------------------*/
     $("select").niceSelect();
 
